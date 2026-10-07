@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodEase - Menu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">Food<span>Ease</span></div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="login.html">Login</a>
+            <a href="register.html" class="nav-btn">Register</a>
+            <a href="cart.html">🛒 Cart <span id="cart-count">0</span></a>
+        </nav>
+    </header>
+
+
+    <!-- Menu Header -->
+    <section class="menu-header">
+        <p>FOODEASE MENU</p>
+        <h1>Choose Your Favorite Food</h1>
+        <p>Fresh, tasty and easy to order from your campus canteen.</p>
+    </section>
+
+
+    <!-- Search -->
+    <section class="menu-section">
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search food..."
+            >
+        </div>
+
+
+        <!-- Categories -->
+        <div class="category-buttons">
+
+            <button class="category-btn active" data-category="All">
+                All
+            </button>
+
+            <button class="category-btn" data-category="Burger">
+                🍔 Burgers
+            </button>
+
+            <button class="category-btn" data-category="Pizza">
+                🍕 Pizza
+            </button>
+
+            <button class="category-btn" data-category="Snacks">
+                🥪 Snacks
+            </button>
+
+            <button class="category-btn" data-category="Beverage">
+                ☕ Beverages
+            </button>
+
+        </div>
+
+
+        <!-- Food Items -->
+        <div id="food-container" class="food-container">
+            <!-- JavaScript will add food cards here -->
+        </div>
+
+    </section>
+
+
+    <footer class="footer">
+
+        <div class="footer-logo">
+            Food<span>Ease</span>
+        </div>
+
+        <p>
+            Making campus dining faster, easier and more convenient.
+        </p>
+
+        <p class="copyright">
+            © 2026 FoodEase. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/menu.js"></script>
+
+</body>
+</html>

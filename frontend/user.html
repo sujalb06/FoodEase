@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FoodEase - User Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header class="dashboard-header">
+
+        <div class="dashboard-logo">
+            Food<span>Ease</span>
+        </div>
+
+        <div class="user-header">
+
+            <span id="user-name"></span>
+
+            <button
+                class="header-btn"
+                onclick="openCart()"
+            >
+                🛒 My Cart
+            </button>
+
+            <button
+                class="logout-btn"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main Dashboard -->
+
+    <main class="user-dashboard">
+
+
+        <!-- Welcome -->
+
+        <section class="welcome-section">
+
+            <h1>
+                Welcome, <span id="welcome-name"></span> 👋
+            </h1>
+
+            <p>
+                Order your favorite food from the canteen.
+            </p>
+
+        </section>
+
+
+        <!-- Ordering Time -->
+
+        <section class="order-time-card">
+
+            <div>
+
+                <h2>🕐 Ordering Time</h2>
+
+                <p id="ordering-status">
+                    Checking ordering time...
+                </p>
+
+            </div>
+
+            <div
+                id="time-badge"
+                class="time-badge"
+            >
+            </div>
+
+        </section>
+
+
+        <section class="queue-section">
+
+        <div class="queue-card">
+
+                <div class="queue-header">
+                <h2>🍴 Canteen Queue</h2>
+                <span id="queue-live">● Live</span>
+                </div>
+
+                <div class="queue-info">
+
+                <div class="queue-item">
+                        <span>Orders Before You</span>
+                        <strong id="orders-before">0</strong>
+                </div>
+
+                <div class="queue-item">
+                        <span>Estimated Time</span>
+                        <strong id="estimated-time">0 minutes</strong>
+                </div>
+
+                <div class="queue-item">
+                        <span>Expected Ready Time</span>
+                        <strong id="ready-time">--:--</strong>
+                </div>
+
+                </div>
+
+                <p id="queue-message">
+                No pending orders are currently ahead of you.
+                </p>
+
+        </div>
+
+        </section>
+
+
+        <!-- Food Section -->
+
+        <section class="food-section">
+
+            <div class="section-title">
+
+                <h2>Available Food</h2>
+
+                <p>
+                    Select your favorite items
+                </p>
+
+            </div>
+
+
+            <div
+                id="food-container"
+                class="simple-food-grid"
+            >
+
+                <!-- Food cards added by JavaScript -->
+
+            </div>
+
+        </section>
+
+
+        <!-- Orders -->
+
+        <section class="orders-section">
+
+            <div class="section-title">
+
+                <h2>My Orders</h2>
+
+                <p>
+                    Your previous orders
+                </p>
+
+            </div>
+
+
+            <div id="orders-container">
+
+                <!-- Orders added by JavaScript -->
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="js/user.js"></script>
+
+</body>
+
+</html>

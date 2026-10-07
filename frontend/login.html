@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodEase - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">Food<span>Ease</span></div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="register.html" class="nav-btn">Register</a>
+        </nav>
+    </header>
+
+
+    <main class="auth-page">
+
+        <div class="auth-card">
+
+            <div class="auth-heading">
+                <h1>Welcome Back</h1>
+                <p>Login to continue ordering from FoodEase.</p>
+            </div>
+
+
+            <form id="login-form">
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+
+                <button type="submit" class="auth-btn">
+                    Login
+                </button>
+
+            </form>
+
+
+            <p class="auth-switch">
+                Don't have an account?
+                <a href="register.html">Create Account</a>
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="footer-logo">
+            Food<span>Ease</span>
+        </div>
+
+        <p>
+            Making campus dining faster, easier and more convenient.
+        </p>
+
+    </footer>
+
+
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

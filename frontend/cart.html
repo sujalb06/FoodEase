@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FoodEase - My Cart</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header class="dashboard-header">
+
+        <div class="dashboard-logo">
+            Food<span>Ease</span>
+        </div>
+
+        <div class="user-header">
+
+            <span id="user-name"></span>
+
+            <button
+                class="header-btn"
+                onclick="goBack()"
+            >
+                ← Back
+            </button>
+
+            <button
+                class="logout-btn"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- Cart -->
+
+    <main class="cart-page">
+
+        <div class="section-title">
+
+            <h1>My Cart</h1>
+
+            <p>
+                Review your items before placing the order.
+            </p>
+
+        </div>
+
+
+        <div class="cart-layout">
+
+            <!-- Cart Items -->
+
+            <div
+                id="cart-container"
+                class="cart-container"
+            >
+                <!-- Cart items will appear here -->
+            </div>
+
+
+            <!-- Summary -->
+
+            <div class="cart-summary">
+
+                <h2>Order Summary</h2>
+
+
+                <div class="summary-row">
+
+                    <span>Items</span>
+
+                    <span id="item-count">
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>Total</span>
+
+                    <strong id="cart-total">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <button
+                    id="place-order-btn"
+                    class="place-order-btn"
+                    onclick="placeOrder()"
+                >
+                    Place Order
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/cart.js"></script>
+
+</body>
+
+</html>
