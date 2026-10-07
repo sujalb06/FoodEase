@@ -22,7 +22,7 @@ async function displayOrders() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/orders"
+            "https://foodease-backend-x6y6.onrender.com/api/orders"
         );
 
 
@@ -178,7 +178,7 @@ async function completeOrder(orderId) {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/orders/${orderId}`,
+            `https://foodease-backend-x6y6.onrender.com/api/orders/${orderId}`,
             {
                 method: "PUT"
             }
@@ -219,7 +219,7 @@ async function clearAllOrders() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/orders",
+            "https://foodease-backend-x6y6.onrender.com/api/orders",
             {
                 method: "DELETE"
             }

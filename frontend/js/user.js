@@ -29,7 +29,7 @@ async function loadFoods() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/foods");
+        const response = await fetch("https://foodease-backend-x6y6.onrender.com/api/foods");
 
         foods = await response.json();
 
@@ -284,7 +284,7 @@ async function displayOrders() {
 
         // Get all orders from backend
         const response = await fetch(
-            "http://localhost:5000/api/orders"
+            "https://foodease-backend-x6y6.onrender.com/api/orders"
         );
 
 
@@ -427,7 +427,7 @@ async function displayQueue() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/orders");
+        const response = await fetch("https://foodease-backend-x6y6.onrender.com/api/orders");
 
         if (!response.ok) {
             throw new Error("Failed to fetch orders");

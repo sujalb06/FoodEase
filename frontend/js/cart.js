@@ -248,7 +248,7 @@ async function placeOrder() {
 
         // Send order to backend
         const response = await fetch(
-            "http://localhost:5000/api/orders",
+            "https://foodease-backend-x6y6.onrender.com/api/orders",
             {
                 method: "POST",
 
