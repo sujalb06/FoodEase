@@ -427,7 +427,9 @@ async function displayQueue() {
 
     try {
 
-        const response = await fetch("https://foodease-backend-x6y6.onrender.com/api/orders");
+        const response = await fetch(
+            "https://foodease-backend-x6y6.onrender.com/api/orders"
+        );
 
         if (!response.ok) {
             throw new Error("Failed to fetch orders");
@@ -435,12 +437,23 @@ async function displayQueue() {
 
         const orders = await response.json();
 
-        // Only pending orders are part of the queue
         const pendingOrders = orders.filter(
             order => order.status === "Pending"
         );
 
-        // Check if current user already has a pending order
+        // No pending orders
+        if (pendingOrders.length === 0) {
+
+            ordersBeforeElement.textContent = "0";
+            estimatedTimeElement.textContent = "0 minutes";
+            readyTimeElement.textContent = "--:--";
+
+            messageElement.textContent =
+                "No pending orders are currently in the canteen queue.";
+
+            return;
+        }
+
         const userOrders = pendingOrders.filter(
             order => order.userName === userName
         );
@@ -449,8 +462,6 @@ async function displayQueue() {
 
         if (userOrders.length > 0) {
 
-            // User already has an order.
-            // Count only orders placed before the user's latest order.
             const myOrder = userOrders[userOrders.length - 1];
 
             const myOrderIndex = pendingOrders.findIndex(
@@ -461,20 +472,14 @@ async function displayQueue() {
 
         } else {
 
-            // User has not placed an order yet.
-            // All existing pending orders are ahead in the queue.
             ordersBefore = pendingOrders.length;
         }
 
-
-        // 6 minutes preparation time per order
         const preparationTimePerOrder = 6;
 
         const estimatedMinutes =
             (ordersBefore + 1) * preparationTimePerOrder;
 
-
-        // Calculate expected ready time
         const now = new Date();
 
         const readyTime = new Date(
@@ -488,7 +493,6 @@ async function displayQueue() {
                 minute: "2-digit"
             });
 
-
         ordersBeforeElement.textContent = ordersBefore;
 
         estimatedTimeElement.textContent =
@@ -496,7 +500,6 @@ async function displayQueue() {
 
         readyTimeElement.textContent =
             formattedTime;
-
 
         if (userOrders.length > 0) {
 
@@ -507,21 +510,15 @@ async function displayQueue() {
 
             messageElement.textContent =
                 "These orders are currently ahead in the canteen queue.";
-
         }
-
 
     } catch (error) {
 
         console.error("Queue Error:", error);
 
         ordersBeforeElement.textContent = "-";
-
-        estimatedTimeElement.textContent =
-            "Unable to load";
-
-        readyTimeElement.textContent =
-            "--:--";
+        estimatedTimeElement.textContent = "Unable to load";
+        readyTimeElement.textContent = "--:--";
 
         messageElement.textContent =
             "Unable to load queue information.";
