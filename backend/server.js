@@ -150,11 +150,27 @@ app.post("/api/orders", async (req, res) => {
 
     const now = new Date();
 
-    const currentMinutes =
-        now.getHours() * 60 + now.getMinutes();
+    const indiaTime = new Intl.DateTimeFormat("en-IN", {
+        timeZone: "Asia/Kolkata",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+    }).formatToParts(now);
+
+    const hours = Number(
+        indiaTime.find(part => part.type === "hour").value
+    );
+
+    const minutes = Number(
+        indiaTime.find(part => part.type === "minute").value
+    );
+
+    const currentMinutes = hours * 60 + minutes;
 
     const startTime = 8 * 60;      // 8:00 AM
     const endTime = 18 * 60;       // 6:00 PM
+
+    
 
 
     if (
